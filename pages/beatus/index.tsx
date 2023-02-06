@@ -1,5 +1,8 @@
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
+import HtmlLogo from '../../public/html-logo.svg'
+import CssLogo from '../../public/css-logo.svg'
+import ReactLogo from '../../public/react-logo.svg'
 
 export default function Club() {
   const router = useRouter()
@@ -37,7 +40,7 @@ export default function Club() {
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 30 }}
             className="text-4xl font-bold text-left w-full"
           >
@@ -56,7 +59,7 @@ export default function Club() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.5 }}
             className="mt-4 font-semibold text-transparent text-xl bg-clip-text bg-gradient-to-r from-purple-500 to-pink-400"
           >
@@ -71,7 +74,7 @@ export default function Club() {
             initial={{ x: 100, opacity: 0, y: 0 }}
             whileInView={{ x: 0, opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className="text-6xl font-extrabold"
           >
             활동 계획
@@ -81,7 +84,7 @@ export default function Club() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="my-4"
           >
@@ -93,7 +96,7 @@ export default function Club() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="my-4"
           >
@@ -105,7 +108,7 @@ export default function Club() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="my-4"
           >
@@ -117,7 +120,7 @@ export default function Club() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="my-4"
           >
@@ -129,7 +132,7 @@ export default function Club() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="my-4"
           >
@@ -147,11 +150,12 @@ export default function Club() {
       <div className="w-full min-h-screen p-4 flex flex-col bg-slate-50 pt-12">
         <div className="text-4xl font-extrabold">웹 개발팀</div>
         <div className="py-8">
-          <div className="p-4 rounded-xl shadow-sm bg-white">
-            <div className="text-xl font-semibold mb-4">프론트엔드</div>
-            <div>
-              HTML, CSS, React 등의 기술을 활용하여 우리 눈에 보여지는 부분을
-              디자인하고 코드로 구현합니다.
+          <div className=" rounded-xl bg-amber-400 text-white">
+            <div className="text-4xl font-semibold p-4">Front-end</div>
+            <div className=" p-4 flex ">
+              <HtmlLogo className="w-20 h-20 " />
+              <CssLogo className="w-20 h-20 " />
+              <ReactLogo className="w-20 h-20" />
             </div>
           </div>
         </div>

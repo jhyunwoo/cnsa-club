@@ -14,7 +14,7 @@ export default function Home() {
           }
         >
           <div className="text-xl font-semibold">Beatus</div>
-          <div className="text-sm text-slate-700">개발 동아리</div>
+          <div className="text-sm text-slate-700">IT 개발 동아리</div>
         </Link>
       </div>
     </div>
