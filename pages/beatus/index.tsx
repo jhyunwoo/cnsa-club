@@ -12,6 +12,7 @@ import JavascriptLogo from '../../public/javascript-logo.svg'
 import TensorflowLogo from '../../public/tensorflow-logo.svg'
 import KerasLogo from '../../public/keras-logo.svg'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Club() {
   const router = useRouter()
@@ -326,7 +327,7 @@ export default function Club() {
                     </div>
                   </div>
                   <div className="flex items-center my-2">
-                    <TensorflowLogo className="w-20 h-20 hover:animate-spin" />
+                    <TensorflowLogo className="w-20 h-20" />
                     <div className="text-2xl font-semibold text-center mx-auto">
                       Tensorflow
                     </div>
@@ -365,12 +366,18 @@ export default function Club() {
           </div>
         </div>
       </div>
-      <div className="w-full min-h-screen bg-slate-50 flex justify-center items-center">
-        <div className="bg-white p-4 w-full mx-4 rounded-xl flex flex-col">
-          <div className="text-3xl font-bold mx-auto my-4">Beatus 동아리</div>
-          <button className="bg-blue-600 hover:bg-blue-700 transition duration-150 text-white p-2 px-6 rounded-full mx-auto mb-4">
+
+      <div className="w-full min-h-screen bg-teal-900 flex justify-center items-center">
+        <div className=" p-4 w-full mx-4 flex flex-col">
+          <div className="text-3xl font-bold mx-auto my-4 text-white">
+            Beatus 동아리
+          </div>
+          <Link
+            href={'/beatus/submit'}
+            className="bg-blue-600 hover:bg-blue-700 transition duration-150 text-white p-2 px-6 rounded-full mx-auto mb-4"
+          >
             지원하기
-          </button>
+          </Link>
         </div>
       </div>
     </div>
