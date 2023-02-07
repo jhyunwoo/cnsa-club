@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
+import axios from 'axios'
 
 type FormValues = {
   name: string
@@ -14,7 +15,20 @@ export default function Submit() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>()
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    const result = await axios.post('/api/submits', {
+      data: {
+        email: data.email,
+        name: data.name,
+        studentId: data.studentId,
+        answers: {
+          q1: data.question1,
+        },
+        year: 2023,
+      },
+    })
+    console.log(result)
+  }
 
   return (
     <div className="w-full min-h-screen bg-slate-50">
