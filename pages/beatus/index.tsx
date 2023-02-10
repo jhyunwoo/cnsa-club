@@ -367,10 +367,28 @@ export default function Club() {
         </div>
       </div>
 
-      <div className="w-full min-h-screen bg-teal-900 flex justify-center items-center">
+      <div className="w-full min-h-screen bg-slate-50 flex justify-center items-center">
         <div className=" p-4 w-full mx-4 flex flex-col">
-          <div className="text-3xl font-bold mx-auto my-4 text-white">
+          <div className="text-3xl font-extrabold mx-auto my-4">
+            2023
+            <br />
             Beatus 동아리
+            <br />
+            신입 부원 모집
+          </div>
+          <div className="bg-white shadow-sm p-4 mt-2 mb-4 rounded-md flex flex-col">
+            <div className="flex flex-col my-1">
+              <div className="text-lg font-semibold mx-auto">모집 인원</div>
+              <div className="text-md font-bold">9기: 4명</div>
+              <div className="text-md font-bold">10기: 24명</div>
+            </div>
+
+            <div className="flex flex-col my-1">
+              <div className="text-lg font-semibold mx-auto">모집 기간</div>
+              <div className="text-md font-bold">
+                2023년 3월 21일 ~ 2023년 4월 2일
+              </div>
+            </div>
           </div>
           <Link
             href={'/beatus/submit'}
