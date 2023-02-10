@@ -3,9 +3,9 @@ export default function Admin() {
   const { data: session } = useSession()
   if (session) {
     return (
-      <div>
+      <div className="w-full min-h-screen bg-slate-50">
         <div>Admin Page</div>
-        <div>{session.user.email}</div>
+        <div>{session.user ? session.user.email : ''}</div>
         <button onClick={() => signOut()}>login</button>
       </div>
     )

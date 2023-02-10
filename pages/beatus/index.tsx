@@ -161,101 +161,103 @@ export default function Club() {
       <div className="w-full p-4 py-12 bg-slate-50">
         <div className="text-6xl font-bold">부서 소개</div>
       </div>
-      <div className="w-full min-h-screen p-4 flex flex-col bg-slate-50 pt-12">
-        <div className="text-4xl font-extrabold">웹 개발팀</div>
+      <div className="grid grid-cols-1 gap-4 bg-slate-50 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="w-full min-h-screen p-4 flex flex-col bg-slate-50">
+          <div className="text-4xl font-extrabold">웹 개발팀</div>
 
-        <div className="py-8 transition duration-200">
-          {!front ? (
-            <div className="rounded-xl bg-amber-400 text-white">
-              <div className="text-4xl font-semibold p-4 ml-2">Front End</div>
-              <div className=" p-4 flex flex-col">
-                <div className="flex items-center my-2">
-                  <HtmlLogo className="w-20 h-20 " />
-                  <div className="text-2xl font-semibold text-center mx-auto">
-                    HTML
+          <div className="py-8 transition duration-200">
+            {!front ? (
+              <div className="rounded-xl bg-amber-400 text-white">
+                <div className="text-4xl font-semibold p-4 ml-2">Front End</div>
+                <div className=" p-4 flex flex-col">
+                  <div className="flex items-center my-2">
+                    <HtmlLogo className="w-20 h-20 " />
+                    <div className="text-2xl font-semibold text-center mx-auto">
+                      HTML
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center my-2">
-                  <CssLogo className="w-20 h-20 " />
-                  <div className="text-2xl font-semibold text-center mx-auto">
-                    CSS
+                  <div className="flex items-center my-2">
+                    <CssLogo className="w-20 h-20 " />
+                    <div className="text-2xl font-semibold text-center mx-auto">
+                      CSS
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center my-2">
-                  <JavascriptLogo className="w-16 ml-2 h-16 m-2 " />
-                  <div className="text-2xl font-semibold text-center mx-auto">
-                    JavaScript
+                  <div className="flex items-center my-2">
+                    <JavascriptLogo className="w-16 ml-2 h-16 m-2 " />
+                    <div className="text-2xl font-semibold text-center mx-auto">
+                      JavaScript
+                    </div>
                   </div>
-                </div>
 
-                <button className="ml-auto" onClick={() => setFront(true)}>
-                  <PlusCircleIcon className="w-8 h-8" />
-                </button>
+                  <button className="ml-auto" onClick={() => setFront(true)}>
+                    <PlusCircleIcon className="w-8 h-8" />
+                  </button>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="rounded-xl bg-amber-400 text-white">
-              <div className="text-4xl font-semibold p-4 ml-2">Front End</div>
-              <div className=" p-4 flex flex-col">
-                <div className="w-full h-72 font-semibold text-lg bg-white rounded-lg text-slate-800 p-4 flex justify-center items-center">
-                  HTML, CSS, JavaScript 등의 기술을 활용하여 우리 눈에 보여지는
-                  부분을 디자인하고 코드로 구현합니다.
-                </div>
+            ) : (
+              <div className="rounded-xl bg-amber-400 text-white">
+                <div className="text-4xl font-semibold p-4 ml-2">Front End</div>
+                <div className=" p-4 flex flex-col">
+                  <div className="w-full h-72 font-semibold text-lg bg-white rounded-lg text-slate-800 p-4 flex justify-center items-center">
+                    HTML, CSS, JavaScript 등의 기술을 활용하여 우리 눈에
+                    보여지는 부분을 디자인하고 코드로 구현합니다.
+                  </div>
 
-                <button className="ml-auto" onClick={() => setFront(false)}>
-                  <XCircleIcon className="w-8 h-8" />
-                </button>
+                  <button className="ml-auto" onClick={() => setFront(false)}>
+                    <XCircleIcon className="w-8 h-8" />
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+          <div className="py-8 transition duration-200">
+            {!back ? (
+              <div className="rounded-xl bg-lime-400 text-white">
+                <div className="text-4xl font-semibold p-4 ml-2">Back End</div>
+                <div className=" p-4 flex flex-col">
+                  <div className="flex items-center my-2">
+                    <JavascriptLogo className="w-16 ml-2 h-16 m-2 " />
+                    <div className="text-2xl font-semibold text-center mx-auto">
+                      JavaScript
+                    </div>
+                  </div>
+                  <div className="flex items-center my-2">
+                    <NodejsLogo className="w-20 h-20 " />
+                    <div className="text-2xl font-semibold text-center mx-auto">
+                      Node JS
+                    </div>
+                  </div>
+                  <div className="flex items-center my-2">
+                    <MySQLLogo className="w-20 h-20 " />
+                    <div className="text-2xl font-semibold text-center mx-auto">
+                      MySQL
+                    </div>
+                  </div>
+
+                  <button className="ml-auto" onClick={() => setBack(true)}>
+                    <PlusCircleIcon className="w-8 h-8" />
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-xl bg-lime-400 text-white">
+                <div className="text-4xl font-semibold p-4 ml-2">Back End</div>
+                <div className=" p-4 flex flex-col">
+                  <div className="w-full h-72 font-semibold text-lg bg-white rounded-lg text-slate-800 p-4 flex justify-center items-center">
+                    우리 눈에는 보이지 않지만 웹페이지를 구성하는데 중요한
+                    서버를 담당합니다. 웹페이지 구성에 필요한 HTML, CSS등의 기초
+                    지식을 배우고 MySQL을 사용하여 백엔드를 개발합니다.
+                  </div>
+
+                  <button className="ml-auto" onClick={() => setBack(false)}>
+                    <XCircleIcon className="w-8 h-8" />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-        <div className="py-8 transition duration-200">
-          {!back ? (
-            <div className="rounded-xl bg-lime-400 text-white">
-              <div className="text-4xl font-semibold p-4 ml-2">Back End</div>
-              <div className=" p-4 flex flex-col">
-                <div className="flex items-center my-2">
-                  <JavascriptLogo className="w-16 ml-2 h-16 m-2 " />
-                  <div className="text-2xl font-semibold text-center mx-auto">
-                    JavaScript
-                  </div>
-                </div>
-                <div className="flex items-center my-2">
-                  <NodejsLogo className="w-20 h-20 " />
-                  <div className="text-2xl font-semibold text-center mx-auto">
-                    Node JS
-                  </div>
-                </div>
-                <div className="flex items-center my-2">
-                  <MySQLLogo className="w-20 h-20 " />
-                  <div className="text-2xl font-semibold text-center mx-auto">
-                    MySQL
-                  </div>
-                </div>
-
-                <button className="ml-auto" onClick={() => setBack(true)}>
-                  <PlusCircleIcon className="w-8 h-8" />
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="rounded-xl bg-lime-400 text-white">
-              <div className="text-4xl font-semibold p-4 ml-2">Back End</div>
-              <div className=" p-4 flex flex-col">
-                <div className="w-full h-72 font-semibold text-lg bg-white rounded-lg text-slate-800 p-4 flex justify-center items-center">
-                  우리 눈에는 보이지 않지만 웹페이지를 구성하는데 중요한 서버를
-                  담당합니다. 웹페이지 구성에 필요한 HTML, CSS등의 기초 지식을
-                  배우고 MySQL을 사용하여 백엔드를 개발합니다.
-                </div>
-
-                <button className="ml-auto" onClick={() => setBack(false)}>
-                  <XCircleIcon className="w-8 h-8" />
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-        <div className="w-full flex flex-col bg-slate-50 pt-12">
+        <div className="w-full flex flex-col bg-slate-50 p-4">
           <div className="text-4xl font-extrabold">앱 개발팀</div>
 
           <div className="py-8 transition duration-200">
@@ -310,7 +312,7 @@ export default function Club() {
             )}
           </div>
         </div>
-        <div className="w-full flex flex-col bg-slate-50 pt-12">
+        <div className="w-full flex flex-col bg-slate-50 p-4">
           <div className="text-4xl font-extrabold">인공지능 개발팀</div>
 
           <div className="py-8 transition duration-200">
@@ -368,25 +370,48 @@ export default function Club() {
       </div>
 
       <div className="w-full min-h-screen bg-slate-50 flex justify-center items-center">
-        <div className=" p-4 w-full mx-4 flex flex-col">
-          <div className="text-3xl font-extrabold mx-auto my-4">
-            2023
-            <br />
-            Beatus 동아리
-            <br />
-            신입 부원 모집
+        <div className=" p-4 w-full mx-4 flex flex-col md:w-auto ">
+          <div className="text-3xl font-extrabold mx-auto my-4 w-full flex flex-wrap md:justify-center">
+            <p className="mx-2">2023</p>
+            <p className="mx-2">Beatus</p>
+            <p className="mx-2">신입 부원 모집</p>
           </div>
           <div className="bg-white shadow-sm p-4 mt-2 mb-4 rounded-md flex flex-col">
             <div className="flex flex-col my-1">
-              <div className="text-lg font-semibold mx-auto">모집 인원</div>
-              <div className="text-md font-bold">9기: 4명</div>
-              <div className="text-md font-bold">10기: 24명</div>
+              <div className="text-xl font-bold mx-auto my-2">지원 자격</div>
+              <div className="text-md font-semibold">
+                IT에 관심을 가지고 있거나 IT를 배워보고 싶은 큰사이언 누구나
+              </div>
             </div>
 
             <div className="flex flex-col my-1">
-              <div className="text-lg font-semibold mx-auto">모집 기간</div>
-              <div className="text-md font-bold">
+              <div className="text-xl font-bold mx-auto my-2">모집 인원</div>
+              <div className="text-md font-semibold md:mx-auto">9기: 4명</div>
+              <div className="text-md font-semibold md:mx-auto">10기: 24명</div>
+            </div>
+
+            <div className="flex flex-col my-1">
+              <div className="text-xl font-bold mx-auto my-2">모집 기간</div>
+              <div className="text-md font-semibold md:mx-auto">
                 2023년 3월 21일 ~ 2023년 4월 2일
+              </div>
+            </div>
+
+            <div className="flex flex-col my-1">
+              <div className="text-xl font-bold mx-auto my-2">모집 일정</div>
+              <div className="text-md font-semibold">
+                <div className="my-1">
+                  1. Beatus 지원 홈페이지에서 4월 2일까지 지원서 작성
+                </div>
+                <div className="my-1">
+                  2. 4월 4일 서류 합격자 발표 (Beatus 홈페이지 확인)
+                </div>
+                <div className="my-1">
+                  3. 4월 6일 대면 면접 (세부 일정 공지 예정)
+                </div>
+                <div className="my-1">
+                  4. 4월 8일 최종 합격자 발표 (Beatus 홈페이지 확인)
+                </div>
               </div>
             </div>
           </div>
