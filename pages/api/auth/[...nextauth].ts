@@ -5,7 +5,9 @@ import prisma from '../../../lib/prismadb'
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
-  // Configure one or more authentication providers
+  pages: {
+    signIn: '/login',
+  },
   providers: [
     GithubProvider({
       // @ts-ignore
