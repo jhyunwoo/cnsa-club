@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import SubmitAlert from '@/components/SubmitAlert'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import useUserSubmits from '@/lib/useUserSubmits'
+import Submitted from '@/components/Submitted'
 
 type FormValues = {
   name: string
@@ -22,19 +24,24 @@ export default function Submit() {
     formState: { errors },
   } = useForm<FormValues>()
   const [submitAlert, setSubmitAlert] = useState('')
+  const [submited, setSubmited] = useState(false)
+  const { userSubmits } = useUserSubmits()
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const result = await axios.post('/api/submits', {
       data: {
         email: data.email,
         studentId: data.studentId,
-        answers: {
-          q1: data.question1,
-        },
+        answers: [
+          {
+            question: '1. 비터스에 지원하게 된 동기가 무엇입니까?',
+            answer: data.question1,
+          },
+        ],
         year: 2023,
         club: 'beatus',
       },
     })
-    console.log(result)
+
     if (result.status === 200) {
       setSubmitAlert('Create')
     } else if (result.status === 201) {
@@ -47,14 +54,30 @@ export default function Submit() {
       router.push('/beatus/login')
     }
   }
+  function checkSubmited() {
+    let data = new Date()
+    let year = data.getFullYear()
+    if (userSubmits) {
+      userSubmits.submits?.map((data) => {
+        if (data.club === 'beatus' && data.year === year) {
+          setSubmited(true)
+        }
+      })
+    }
+  }
 
   useEffect(() => {
     redirect()
   }, [session])
 
+  useEffect(() => {
+    checkSubmited()
+  }, [userSubmits])
+
   if (session) {
     return (
       <div className="w-full min-h-screen bg-slate-50">
+        {submited ? <Submitted /> : ''}
         {submitAlert === 'Create' ? <SubmitAlert title="접수 완료" /> : ''}
         {submitAlert === 'Update' ? (
           <SubmitAlert title="지원서 수정 완료" />

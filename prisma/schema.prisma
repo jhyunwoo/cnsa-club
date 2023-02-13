@@ -40,7 +40,7 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  admin         Boolean?
+  role String @default("student")
   accounts      Account[]
   sessions      Session[]
   submits       submits[]
@@ -58,10 +58,10 @@ model submits {
   id        String   @id @default(cuid())
   user      User     @relation(fields: [userId], references: [id])
   userId    String
-  studentId Int      @unique
+  studentId Int     
   club      String
   year      Int
-  answers   Json
+  answers   Json[]
   pass1     Boolean?
   pass2     Boolean?
 }

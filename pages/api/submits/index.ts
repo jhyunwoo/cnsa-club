@@ -11,6 +11,7 @@ export default async function handler(
   if (session) {
     if (req.method === 'POST') {
       const { data } = req.body
+
       const createSubmit = await prisma.submits.create({
         data: {
           studentId: Number(data.studentId),
@@ -26,8 +27,15 @@ export default async function handler(
       })
       return res.status(200).json(createSubmit)
     } else if (req.method === 'GET') {
-      const allSubmits = await prisma.submits.findMany()
-      return res.status(200).json(allSubmits)
+      const userSubmits = await prisma.user.findUnique({
+        where: {
+          email: session.user.email,
+        },
+        select: {
+          submits: true,
+        },
+      })
+      res.status(200).json(userSubmits)
     }
   } else {
     res.status(404)

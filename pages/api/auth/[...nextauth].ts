@@ -23,6 +23,17 @@ export const authOptions = {
       clientSecret: process.env.NAVER_CLIENT_SECRET,
     }),
   ],
+  callbacks: {
+    async session({ session }) {
+      let userData = await prisma.user.findUnique({
+        where: {
+          email: session.user.email,
+        },
+      })
+      session.user = userData
+      return session
+    },
+  },
 }
 
 export default NextAuth(authOptions)
