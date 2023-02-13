@@ -58,7 +58,7 @@ export default function Submit() {
     let data = new Date()
     let year = data.getFullYear()
     if (userSubmits) {
-      userSubmits.submits?.map((data) => {
+      userSubmits.submits?.map((data:any) => {
         if (data.club === 'beatus' && data.year === year) {
           setSubmited(true)
         }
