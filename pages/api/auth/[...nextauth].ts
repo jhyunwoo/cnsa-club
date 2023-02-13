@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth'
-import GithubProvider from 'next-auth/providers/github'
+import GoogleProvider from 'next-auth/providers/google'
+import NaverProvider from 'next-auth/providers/naver'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import prisma from '../../../lib/prismadb'
 
@@ -9,11 +10,17 @@ export const authOptions = {
     signIn: '/login',
   },
   providers: [
-    GithubProvider({
+    GoogleProvider({
       // @ts-ignore
-      clientId: process.env.GITHUB_ID,
+      clientId: process.env.GOOGLE_CLIENT_ID,
       // @ts-ignore
-      clientSecret: process.env.GITHUB_SECRET,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    NaverProvider({
+      // @ts-ignore
+      clientId: process.env.NAVER_CLIENT_ID,
+      // @ts-ignore
+      clientSecret: process.env.NAVER_CLIENT_SECRET,
     }),
   ],
 }

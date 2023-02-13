@@ -1,5 +1,5 @@
 import { signIn, useSession } from 'next-auth/react'
-import NaverLogin from '../public/naver-logo.png'
+import NaverLogin from '../../public/naver-logo.png'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useEffect } from 'react'
@@ -11,7 +11,7 @@ export default function Signin() {
   // check user auth
   useEffect(() => {
     if (session) {
-      router.push('/')
+      router.push('/beatus/submit')
     }
   })
 

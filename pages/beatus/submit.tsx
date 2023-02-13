@@ -44,12 +44,11 @@ export default function Submit() {
 
   function redirect() {
     if (!session) {
-      router.push('/login')
+      router.push('/beatus/login')
     }
   }
 
   useEffect(() => {
-    console.log(session)
     redirect()
   }, [session])
 

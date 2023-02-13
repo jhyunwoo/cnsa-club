@@ -15,8 +15,8 @@ export default function Home() {
             head ? 'translate-x-0' : 'translate-x-full'
           } transition`}
         >
-          <div className="w-0 h-full backdrop-blur-md"></div>
-          <div className="w-full h-full bg-white flex flex-col">
+          <div className="w-0 sm:w-1/3 h-full bg-slate-300/20 backdrop-blur-sm"></div>
+          <div className="w-full sm:w-2/3 h-full bg-white flex flex-col">
             <div className="ml-auto p-4">
               <button onClick={() => setHead(false)}>
                 <XMarkIcon className="w-8 h-8" />
@@ -25,6 +25,9 @@ export default function Home() {
             <div className="p-4">
               <div className="text-xl font-semibold">
                 {session ? session?.user?.name : '로그인이 필요합니다'}
+              </div>
+              <div className="text-lg font-medium">
+                {session ? session?.user?.email : ''}
               </div>
               {session ? (
                 <button
