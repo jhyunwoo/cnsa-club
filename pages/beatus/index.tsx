@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { PlusCircleIcon, XCircleIcon } from '@heroicons/react/24/outline'
+import DearuLogo from '../../public/dearu.ico'
 import HtmlLogo from '../../public/html-logo.svg'
 import CssLogo from '../../public/css-logo.svg'
 import NodejsLogo from '../../public/nodejs-logo.svg'
@@ -13,6 +14,7 @@ import TensorflowLogo from '../../public/tensorflow-logo.svg'
 import KerasLogo from '../../public/keras-logo.svg'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Club() {
   const router = useRouter()
@@ -50,6 +52,32 @@ export default function Club() {
       </div>
       <div className="w-full bg-gradient-to-b from-teal-900 via-teal-900 to-black h-80 -mt-40"></div>
       <div className=" bg-black w-full h-screen flex justify-center items-center flex-col p-4 text-white">
+      
+      
+        <div className="h-4/5 p-4 my-5 flex flex-col justify-center">
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 30 }}
+            className="text-4xl font-bold text-center w-full text-amber-200"
+          >
+            <Link href="/project-dearyou">
+              <Image
+              src={DearuLogo}
+              alt="Dearu"
+              className='my-5 mx-auto'/>
+            </Link>
+            드려유 이벤트 안내
+          </motion.div>
+          <div className="my-4">
+            <div className="text-gray-400 text-lg font-semibold text-center">
+              아이콘을 누르면 이동합니다.
+            </div>
+          </div>
+        </div>
+      
+      
         <div className="h-4/5 p-4  flex flex-col justify-center">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -83,7 +111,7 @@ export default function Club() {
         </div>
       </div>
       <div className="w-full min-h-screen text-white bg-black flex flex-col p-4 items-center">
-        <div className="overflow-x-scroll p-2 scrollbar-hide flex">
+        <div className="mt-20 overflow-x-scroll p-2 scrollbar-hide flex">
           <motion.p
             initial={{ x: 100, opacity: 0, y: 0 }}
             whileInView={{ x: 0, opacity: 1, y: 0 }}
