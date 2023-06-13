@@ -48,43 +48,14 @@ export default function Dearyou() {
                 }}
                 className="mx-auto p-2"
             >
-                <div className='mx-auto mt-5'>
-                    <span className='font-bold'>드려유</span>는 우리 학교에서
+                <div className='mx-auto mt-4 mb-8'>
+                    홍보 영상은 7월 7일 공개됩니다.
                 </div>
-                <div className='mx-auto'>
-                    교과서, 풀지 않은 문제집, 학용품 등을
-                </div>
-                <div className='mx-auto'>
-                    쉽게 나누고 거래할 수 있는 온라인 플랫폼입니다!
-                </div>
-                <div className='mx-auto mt-5'>
-                    2회고사 이후 4일간(7.11~7.14)
-                </div>
-                <div className='mx-auto mb-5'>
-                    서비스를 운영할 계획입니다.
-                </div>
-                
-                <button className='mx-auto mt-10 mb-80 font-bold'
-                    onClick={()=>(
-                        scrollRef?.current?.scrollIntoView({
-                            behavior: "smooth"
-                        })
-                    )}>
-                    ▼ 소개 포스터 보러 가기
-                </button>
+                <Link href={`/project-dearyou`}
+                    className='mx-auto p-3 bg-amber-200 rounded-xl'>
+                        소개 페이지로 이동
+                </Link>
             </motion.div>
-
-            <div ref={scrollRef} className=''>
-            <Image src={Poster1} alt="Poster1" className="mx-auto w-full p-2"/>
-            <Image src={Poster2} alt="Poster2" className="mx-auto w-full p-2"/>
-            <Image src={Poster3} alt="Poster3" className="mx-auto w-full p-2"/>
-            <Image src={Poster4} alt="Poster4" className="mx-auto w-full p-2"/>
-            </div>
-            
-            <div className="mt-10 text-2xl">MADE BY</div>
-            <div className="mt-2">충남삼성고 IT 개발 동아리</div>
-            <Image src={BeatusLogo} alt="beatusLogo" className="w-64 h-64 mx-auto mb-10"/>
-            <div className="mb-20 text-lg">with. 10대 자율위원단</div>
             </div>
         </div>
     )
