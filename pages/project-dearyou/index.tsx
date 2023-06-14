@@ -43,7 +43,7 @@ export default function Dearyou() {
 
     return (
         <div className="">
-        <div className='sm:w-2/5 sm:mx-auto text-center mt-32'>
+        <div className='md:w-2/5 md:mx-auto text-center mt-32'>
             <motion.div
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
