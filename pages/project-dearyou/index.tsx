@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { ArrowRightIcon, ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import DearuLogo from '../../public/dearu.ico'
-import BeatusLogo from '../../public/BeatusLogo.jpg'
+import BeatusLogo from '../../public/BeatusLogoMini.jpg'
 import CscLogo from '../../public/dearyou/csc.png'
 import Poster0 from '../../public/dearyou/0.png'
 import Poster1 from '../../public/dearyou/1.png'
@@ -129,16 +129,24 @@ export default function Dearyou() {
             </div>
             
             <div className="mt-10 text-2xl">MADE BY</div>
-            <div className='mt-5'>충남삼성고등학교</div>
-            <div className='mx-auto'>
-                <div className="font-bold text-cyan-800">IT 개발 동아리 Beatus</div>
-                <Image src={BeatusLogo} alt="beatusLogo" className="w-32 h-32 my-2 mx-auto"/>
-            </div>
-            <div className='mt-5'>WITH</div>
-            <div className='mx-auto mb-20'>
-                <div className="font-bold text-blue-900">10대 자율위원단</div>
-                <Image src={CscLogo} alt="CscLogo" className="w-32 h-32 my-2 mx-auto"/>
-            </div>
+
+            <div className="flex px-10 my-5 items-center text-cyan-900">
+                <div className='mx-auto'>
+                    <div className="font-bold">
+                        <div>IT 개발 동아리</div>
+                        <div>Beatus</div>
+                    </div>
+                    <Image src={BeatusLogo} alt="beatusLogo" className="w-24 h-24 my-2 mx-auto"/>
+                </div>
+                <XMarkIcon className='w-6 h-8 mx-2 mt-10'/>
+                <div className='mx-auto'>
+                    <div className="font-bold">
+                        <div>충남삼성고</div>
+                        <div>10대 자율위원단</div>
+                    </div>
+                    <Image src={CscLogo} alt="CscLogo" className="w-24 h-24 my-2 mx-auto"/>
+                </div>
+                </div>
             </div>
         </div>
     )
