@@ -15,9 +15,9 @@ import KerasLogo from '../../public/keras-logo.svg'
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function Club() {
-  const router = useRouter()
   const [front, setFront] = useState(false)
   const [back, setBack] = useState(false)
   const [app, setApp] = useState(false)
@@ -25,6 +25,9 @@ export default function Club() {
 
   return (
     <div className="w-full min-h-screen">
+      <Head>
+        <title>Beatus</title>
+      </Head>
       <div className="bg-teal-900 w-full h-screen flex justify-center items-center">
         <div className="text-white flex justify-center items-center flex-col">
           <motion.div
@@ -394,61 +397,6 @@ export default function Club() {
               </div>
             )}
           </div>
-        </div>
-      </div>
-
-      <div className="w-full min-h-screen bg-slate-50 flex justify-center items-center">
-        <div className=" p-4 w-full mx-4 flex flex-col md:w-auto ">
-          <div className="text-3xl font-extrabold mx-auto my-4 w-full flex flex-wrap md:justify-center">
-            <p className="mx-2">2023</p>
-            <p className="mx-2">Beatus</p>
-            <p className="mx-2">신입 부원 모집</p>
-          </div>
-          <div className="bg-white shadow-sm p-4 mt-2 mb-4 rounded-md flex flex-col">
-            <div className="flex flex-col my-1">
-              <div className="text-xl font-bold mx-auto my-2">지원 자격</div>
-              <div className="text-md font-semibold">
-                IT에 관심을 가지고 있거나 IT를 배워보고 싶은 큰사이언 누구나
-              </div>
-            </div>
-
-            <div className="flex flex-col my-1">
-              <div className="text-xl font-bold mx-auto my-2">모집 인원</div>
-              <div className="text-md font-semibold md:mx-auto">9기: 4명</div>
-              <div className="text-md font-semibold md:mx-auto">10기: 24명</div>
-            </div>
-
-            <div className="flex flex-col my-1">
-              <div className="text-xl font-bold mx-auto my-2">모집 기간</div>
-              <div className="text-md font-semibold md:mx-auto">
-                2023년 3월 21일 ~ 2023년 4월 2일
-              </div>
-            </div>
-
-            <div className="flex flex-col my-1">
-              <div className="text-xl font-bold mx-auto my-2">모집 일정</div>
-              <div className="text-md font-semibold">
-                <div className="my-1">
-                  1. Beatus 지원 홈페이지에서 4월 2일까지 지원서 작성
-                </div>
-                <div className="my-1">
-                  2. 4월 4일 서류 합격자 발표 (Beatus 홈페이지 확인)
-                </div>
-                <div className="my-1">
-                  3. 4월 6일 대면 면접 (세부 일정 공지 예정)
-                </div>
-                <div className="my-1">
-                  4. 4월 8일 최종 합격자 발표 (Beatus 홈페이지 확인)
-                </div>
-              </div>
-            </div>
-          </div>
-          <Link
-            href={'/beatus/submit'}
-            className="bg-blue-600 hover:bg-blue-700 transition duration-150 text-white p-2 px-6 rounded-full mx-auto mb-4"
-          >
-            지원하기
-          </Link>
         </div>
       </div>
     </div>
