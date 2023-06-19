@@ -1,20 +1,17 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { SessionProvider } from 'next-auth/react'
 import { IBM_Plex_Sans_KR } from '@next/font/google'
-import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as gtag from 'lib/gtag';
 import Script from 'next/script';
+import { useEffect } from 'react';
+
 const plex_sans = IBM_Plex_Sans_KR({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600'],
 })
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
 
@@ -31,15 +28,17 @@ export default function App({
   }, [router.events]);
 
   return (
-    <SessionProvider session={session}>
+   
+      <>
       <style jsx global>{`
         html {
           font-family: ${plex_sans.style.fontFamily};
         }
       `}</style>
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        src={`/google-analytics`}
       />
       <Script
         id="gtag-init"
@@ -49,13 +48,15 @@ export default function App({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
+            gtag('config', 'G-82BMM1EFF1', {
               page_path: window.location.pathname,
             });
           `,
         }}
       />
+      
       <Component {...pageProps} />
-    </SessionProvider>
+      </>
+   
   )
 }
