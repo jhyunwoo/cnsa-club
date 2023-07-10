@@ -15,6 +15,7 @@ import Poster4 from '../../public/dearyou/4.png'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRef } from 'react'
+import va from '@vercel/analytics'
 
 interface Info {
   title: string
@@ -87,6 +88,7 @@ export default function Dearyou() {
                 className="mx-auto rounded-lg border-2 p-4 font-bold
               border-amber-400 bg-amber-400 hover:bg-amber-500 transition duration-200 text-white "
                 href={'https://dearyou.moveto.kr'}
+                onClick={() => va.track('Dearyou')}
               >
                 드려유 접속
               </Link>
