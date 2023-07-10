@@ -1,10 +1,11 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { IBM_Plex_Sans_KR } from '@next/font/google'
-import { useRouter } from 'next/router';
-import * as gtag from 'lib/gtag';
-import Script from 'next/script';
-import { useEffect } from 'react';
+import { useRouter } from 'next/router'
+import * as gtag from 'lib/gtag'
+import Script from 'next/script'
+import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 const plex_sans = IBM_Plex_Sans_KR({
   subsets: ['latin'],
@@ -12,34 +13,29 @@ const plex_sans = IBM_Plex_Sans_KR({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-
-  const router = useRouter();
+  const router = useRouter()
 
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
-      gtag.pageview(url);
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    router.events.on('hashChangeComplete', handleRouteChange);
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    router.events.on('hashChangeComplete', handleRouteChange)
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-      router.events.off('hashChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
+      router.events.off('routeChangeComplete', handleRouteChange)
+      router.events.off('hashChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   return (
-   
-      <>
+    <>
       <style jsx global>{`
         html {
           font-family: ${plex_sans.style.fontFamily};
         }
       `}</style>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
-      <Script
-        strategy="afterInteractive"
-        src={`/google-analytics`}
-      />
+      <Script strategy="afterInteractive" src={`/google-analytics`} />
       <Script
         id="gtag-init"
         strategy="afterInteractive"
@@ -54,9 +50,9 @@ export default function App({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      
+
       <Component {...pageProps} />
-      </>
-   
+      <Analytics />
+    </>
   )
 }
