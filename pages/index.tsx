@@ -1,10 +1,8 @@
 import Link from 'next/link'
-import HeadBar from '@/components/HeadBar'
 
 export default function Home() {
   return (
     <div className="bg-slate-50 w-full min-h-screen flex flex-col">
-      <HeadBar />
       <div className="grid grid-cols-1 gap-4 p-4">
         <Link
           href={'/beatus'}

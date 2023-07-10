@@ -9,6 +9,15 @@ const nextConfig = {
 
     return config
   },
+  async rewrites() {
+    return [
+      {
+        source: "/google-analytics",
+        destination: "https://www.googletagmanager.com/gtag/js?id=G-82BMM1EFF1",
+      },
+    ];
+  },
+
 }
 
 module.exports = nextConfig
