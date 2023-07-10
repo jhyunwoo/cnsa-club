@@ -73,15 +73,21 @@ export default function Dearyou() {
                 <div className='mx-auto'>
                     교과서, 풀지 않은 문제집, 학용품 등을
                 </div>
-                <div className='mx-auto'>
-                    쉽게 나누고 거래할 수 있는 온라인 플랫폼입니다!
-                </div>
-                <div className='mx-auto mt-5'>
-                    2회고사 이후 4일간(7.11~7.14)
-                </div>
                 <div className='mx-auto mb-5'>
-                    서비스를 운영할 예정입니다.
+                    쉽게 나누고 교환할 수 있는 온라인 플랫폼입니다!
                 </div>
+
+
+            <div className='flex'>
+                <div 
+                    className='mx-auto rounded-lg border-2 p-4 font-bold
+                    border-slate-300 bg-slate-200 text-slate-500'>
+                        드려유 접속
+                </div>
+            </div>
+            <div className='mx-auto text-slate-500 mt-2 mb-5'>
+                공개 시간: 7월 11일(화) 17:00
+            </div>
             </motion.div>
             <motion.div
                 initial={{ y: 30, opacity: 0 }}
@@ -95,11 +101,25 @@ export default function Dearyou() {
                             behavior: "smooth"
                         })
                     )}>
-                    ▼ 소개 포스터 보러 가기
+                    ▼ 소개 영상 & 포스터 보러 가기
                 </button>
             </motion.div>
 
+
             <div ref={scrollRef} className=''>
+
+                <div className='flex'>
+                <iframe width={1000} height={200}
+                    src="https://www.youtube.com/embed/tFniFh78k1g" 
+                    title="YouTube video player"
+                    allow='fullscreen'
+                    className='mx-auto'>
+                </iframe>
+                </div>
+                <Description info={{title: '소개 영상', desc: [
+                    "드려유 홍보 영상입니다."
+                    ]}}/>
+
                 <Image src={Poster0} alt="Poster0" className="mx-auto w-full p-2"/>
                 <Description info={{title: '드려유가 뭐유?', desc: [
                     "드려유는 Beatus 동아리에서 제작한 온라인 나눔 플랫폼입니다.",
