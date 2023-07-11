@@ -29,7 +29,7 @@ export default function Dearyou() {
   const scrollRef = useRef<null | HTMLDivElement>(null)
 
   const currentDate = new Date()
-  const openDate = new Date(2023, 6, 11, 17, 0)
+  const openDate = new Date(2023, 6, 11, 14, 0)
 
   function Description({ info }: InfoProps) {
     const { title, desc } = info
