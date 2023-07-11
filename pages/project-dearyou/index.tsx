@@ -29,7 +29,7 @@ export default function Dearyou() {
   const scrollRef = useRef<null | HTMLDivElement>(null)
 
   const currentDate = new Date()
-  const openDate = new Date(2023, 6, 11, 16, 0)
+  const openDate = new Date(2023, 6, 11, 17, 0)
 
   function Description({ info }: InfoProps) {
     const { title, desc } = info
@@ -102,7 +102,7 @@ export default function Dearyou() {
             )}
           </div>
           <div className="mx-auto text-slate-500 mt-2 mb-5">
-            공개 시간: 7월 11일(화) 16:00
+            공개 시간: 7월 11일(화) 17:00
           </div>
         </motion.div>
         <motion.div
