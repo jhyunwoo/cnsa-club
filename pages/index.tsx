@@ -16,7 +16,7 @@ export default function Club() {
 
   useEffect(() => {
     if(!inView || typing > typeText.length) return;
-    setTimeout(() => {setTyping(typing+1)}, 40);
+    setTimeout(() => {setTyping(typing+1)}, 25);
   }, [inView, typing])
 
   const MegathonLink = () => (
@@ -157,7 +157,7 @@ export default function Club() {
       
 
       <div className='py-10 bg-black text-lg text-slate-400 text-center'>
-          Beatus 2023
+          사이트 제작: 8기 전현우, 김연준
       </div>
     </div>
   )
