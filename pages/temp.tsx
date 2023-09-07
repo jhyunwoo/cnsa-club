@@ -1,195 +1,27 @@
-import { useRouter } from 'next/router'
-import { motion } from 'framer-motion'
+/** 원래 메인 페이지에 있던 '부서 소개' 관련 글을 옮겨놓은 페이지임. */
+
 import { PlusCircleIcon, XCircleIcon } from '@heroicons/react/24/outline'
-import DearuLogo from '../../public/dearu.ico'
-import HtmlLogo from '../../public/html-logo.svg'
-import CssLogo from '../../public/css-logo.svg'
-import NodejsLogo from '../../public/nodejs-logo.svg'
-import ReactLogo from '../../public/react-logo.svg'
-import ExpoLogo from '../../public/expo-logo.svg'
-import MySQLLogo from '../../public/mysql-logo.svg'
-import PythonLogo from '../../public/python-logo.svg'
-import JavascriptLogo from '../../public/javascript-logo.svg'
-import TensorflowLogo from '../../public/tensorflow-logo.svg'
-import KerasLogo from '../../public/keras-logo.svg'
+import HtmlLogo from '../public/html-logo.svg'
+import CssLogo from '../public/css-logo.svg'
+import NodejsLogo from '../public/nodejs-logo.svg'
+import ReactLogo from '../public/react-logo.svg'
+import ExpoLogo from '../public/expo-logo.svg'
+import MySQLLogo from '../public/mysql-logo.svg'
+import PythonLogo from '../public/python-logo.svg'
+import JavascriptLogo from '../public/javascript-logo.svg'
+import TensorflowLogo from '../public/tensorflow-logo.svg'
+import KerasLogo from '../public/keras-logo.svg'
 import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import Head from 'next/head'
 
-export default function Club() {
-  const [front, setFront] = useState(false)
-  const [back, setBack] = useState(false)
-  const [app, setApp] = useState(false)
-  const [ai, setAi] = useState(false)
+export default function Temp(){
+    const [front, setFront] = useState(false)
+    const [back, setBack] = useState(false)
+    const [app, setApp] = useState(false)
+    const [ai, setAi] = useState(false)
 
-  return (
-    <div className="w-full min-h-screen">
-      <Head>
-        <title>Beatus</title>
-      </Head>
-      <div className="bg-teal-900 w-full h-screen flex justify-center items-center">
-        <div className="text-white flex justify-center items-center flex-col">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ type: 'tween', delay: 0.5, duration: 1 }}
-            className="text-6xl font-extrabol"
-          >
-            Beatus
-          </motion.div>
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 30,
-              delay: 1,
-              duration: 1,
-            }}
-            className="text-xl font-semibold mt-2"
-          >
-            충남삼성고 IT 개발 동아리
-          </motion.div>
-        </div>
-      </div>
-      <div className="w-full bg-gradient-to-b from-teal-900 via-teal-900 to-black h-80 -mt-40"></div>
-      <div className=" bg-black w-full h-screen flex justify-center items-center flex-col p-4 text-white">
-      
-      
-        <div className="h-4/5 p-4 my-5 flex flex-col justify-center">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: 'spring', stiffness: 30 }}
-            className="text-4xl font-bold text-center w-full text-amber-200"
-          >
-            <Link href="/project-dearyou">
-              <Image
-              src={DearuLogo}
-              alt="Dearu"
-              className='my-5 mx-auto'/>
-            </Link>
-            드려유 이벤트 안내
-          </motion.div>
-          <div className="my-4">
-            <div className="text-gray-400 text-lg font-semibold text-center">
-              아이콘을 누르면 이동합니다.
-            </div>
-          </div>
-        </div>
-      
-      
-        <div className="h-4/5 p-4  flex flex-col justify-center">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: 'spring', stiffness: 30 }}
-            className="text-4xl font-bold text-left w-full"
-          >
-            동아리 소개
-          </motion.div>
-          <div className="my-4">
-            <div className="text-gray-400 text-2xl font-semibold">
-              Beatus는 충남삼성고등학교 유일 IT 개발을 목적으로 하는
-              동아리입니다.
-            </div>
-          </div>
-        </div>
-        <div className="text-white text-xl font-semibold h-4/5 p-4  flex flex-col justify-center">
-          지루한 계산기 만들기, 알고리즘 문제 풀기와 같은 이론 중심적인 활동
-          보단 <br />
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="mt-4 font-semibold text-transparent text-xl bg-clip-text bg-gradient-to-r from-purple-500 to-pink-400"
-          >
-            직접 웹페이지, 앱, 인공지능을 개발하며 코딩과 친해질 수 있는 활동을
-            지향합니다.
-          </motion.p>
-        </div>
-      </div>
-      <div className="w-full min-h-screen text-white bg-black flex flex-col p-4 items-center">
-        <div className="mt-20 overflow-x-scroll p-2 scrollbar-hide flex">
-          <motion.p
-            initial={{ x: 100, opacity: 0, y: 0 }}
-            whileInView={{ x: 0, opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="text-6xl font-extrabold"
-          >
-            활동 계획
-          </motion.p>
-        </div>
-        <div className="flex flex-col my-12">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="my-4"
-          >
-            <div className="text-4xl font-bold">3월</div>
-            <div className="text-2xl font-semibold text-slate-400 my-2">
-              동아리 편성 및 자기소개
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="my-4"
-          >
-            <div className="text-4xl font-bold">4월</div>
-            <div className="text-2xl font-semibold text-slate-400 my-2">
-              부서 편성 및 신입생 멘토링 진행
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="my-4"
-          >
-            <div className="text-4xl font-bold">5월~7월</div>
-            <div className="text-2xl font-semibold text-slate-400 my-2">
-              각 부서별 멘토링 진행 & IT 관련 주제 토론
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="my-4"
-          >
-            <div className="text-4xl font-bold">8월~11월</div>
-            <div className="text-2xl font-semibold text-slate-400 my-2">
-              부서별 프로젝트 구상 및 개발 진행
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="my-4"
-          >
-            <div className="text-4xl font-bold">12월</div>
-            <div className="text-2xl font-semibold text-slate-400 my-2">
-              프로젝트 발표
-            </div>
-          </motion.div>
-        </div>
-      </div>
-      <div className="w-full bg-gradient-to-b from-black to-slate-50 h-40"></div>
-      <div className="w-full p-4 py-12 bg-slate-50">
+    return (
+        <>
+        <div className="w-full p-4 py-12 bg-slate-50">
         <div className="text-6xl font-bold">부서 소개</div>
       </div>
       <div className="grid grid-cols-1 gap-4 bg-slate-50 sm:grid-cols-2 lg:grid-cols-3">
@@ -398,7 +230,6 @@ export default function Club() {
             )}
           </div>
         </div>
-      </div>
-    </div>
-  )
+      </div></>
+    )
 }

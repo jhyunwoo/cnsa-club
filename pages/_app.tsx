@@ -1,15 +1,15 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { IBM_Plex_Sans_KR } from '@next/font/google'
+import { Noto_Sans_KR } from '@next/font/google'
 import { useRouter } from 'next/router'
 import * as gtag from 'lib/gtag'
 import Script from 'next/script'
 import { useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 
-const plex_sans = IBM_Plex_Sans_KR({
+const plex_sans = Noto_Sans_KR({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600'],
+  weight: ['100', '300', '400', '500', '700', '900'],
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
 
-      <Component {...pageProps} />
+      <Component {...pageProps} className="scrollbar-hide"/>
       <Analytics />
     </>
   )
