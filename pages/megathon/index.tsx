@@ -123,7 +123,7 @@ export default function Index(){
             <div className="mt-4 p-4 border-2 rounded-lg">
                 {helpsites.map((data, key) => (
                 <Link href={data[1]} className="flex my-2 text-blue-400" key={key}>
-                    {key+1}. {data[0]}
+                    #{key+1}. {data[0]}
                 </Link>
                 ))}
             </div>
