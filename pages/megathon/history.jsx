@@ -112,8 +112,8 @@ export default function Index(){
                                 sDate: "2023.9.5",
                                 eDate: "2023.9.12",
                                 topic: "자기소개 웹 사이트 만들기",
-                                winner: ["OOO(10기)", "OOO(10기)", "OOO(10기)"],
-                                link: ["", "", ""]
+                                winner: ["최지우(10기)", "임현성(10기)", "박민호(10기)"],
+                                link: ["https://jiwoooochoiiiii.netlify.app/", "https://imhs2007introduction.netlify.app/", "https://minhocnsa.netlify.app/"]
                             }
                         ]
                     }/>
