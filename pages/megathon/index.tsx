@@ -95,9 +95,9 @@ export default function Index(){
                 {criteria.map((data, key) => (
                 <div className="flex font-normal my-2" key={key}>
                     <div className="w-24 text-lg text-yellow-400">
-                        {data[0] + " |"}
+                        {data[0]}
                     </div>
-                    <div className="w-48 sm:w-80 text-left">
+                    <div className="w-fit text-left">
                     {data[1].split(';').map((subdata, subkey) => (
                         <div key={subkey} className="my-1">
                             {subdata}
@@ -149,8 +149,8 @@ export default function Index(){
                     ]}/>
 
             <CriteriaBanner criteria={[
-                ["심미성", "결과물이 얼마나 예쁜가?;결과물이 얼마나 세련됐는가?;결과물이 얼마나 cool한가?"],
-                ["기술성", "HTML 태그를 얼마나 적절하게 사용했는가?;CSS를 적절하게 사용했는가?;코드에 대해 이해하고 있는가?(평가자가 질문할 예정)"],
+                ["심미성", "결과물이 얼마나 아름다운가?;결과물이 얼마나 최신 트렌드를 반영했는가?;결과물이 얼마나 cool한가?"],
+                ["기술성", "HTML 태그를 적절하게 사용했는가?;CSS를 적절하게 사용했는가?;코드를 이해하고 있는가?(평가자가 질문할 예정)"],
                 ["콘텐츠", "결과물이 얼마나 유용한 정보를 담고 있는가?;콘텐츠 구성이 적절한가?"]
             ]}/>
 
@@ -164,7 +164,7 @@ export default function Index(){
                 href="/megathon/history"
                 className="bg-gradient-to-bl from-blue-500 to-purple-500
                  text-white text-xl font-bold mx-auto p-4 rounded-lg">
-                이전 대회 보기
+                명예의 전당
             </Link>
         </div>
     </div>
