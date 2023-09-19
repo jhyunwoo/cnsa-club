@@ -97,14 +97,6 @@ export default function Index(){
                     <History list={
                         [
                             ,{
-                                num: 2,
-                                sDate: "2023.9.5",
-                                eDate: "2023.9.12",
-                                topic: "오수인 바보",
-                                winner: "오수인(8기)",
-                                link: ""
-                            }
-                            ,{
                                 num: 1,
                                 sDate: "2023.9.5",
                                 eDate: "2023.9.12",
