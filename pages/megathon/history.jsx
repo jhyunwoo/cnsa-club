@@ -24,24 +24,35 @@ export default function Index(){
                     <div className="ml-1 text-lg">{sDate} ~ {eDate}</div>
                 </div>
                 <div className="text-lg">주제: {topic}</div>
-                <div className="flex items-center justify-center mt-4">
-                    <TrophyIcon className="w-10 h-10 stroke-amber-300 fill-amber-300"/>
-                    <div className="ml-2 font-bold text-2xl">{winner}</div>
+                <div className="">
+                    { winner.map((data, key) => (
+                        <div className="md:flex justify-center" key={key}>
+                        <div className="flex items-center justify-center mt-4 w-fit">
+                            {key === 0 ? 
+                            <TrophyIcon className="w-10 h-10 stroke-amber-300 fill-amber-300"/>
+                            : <div className="font-bold lg:text-2xl mx-1 text-amber-300">{key+1}위</div>
+                            }
+                            <div className="ml-2 font-bold text-xl">{data}</div>
+                        </div>
+                            {link[key] && link[key].length > 0 ?
+                            <Link href={link[key]}
+                                className="flex justify-center ml-2 mt-2 p-2 items-center md:w-1/2
+                                font-bold text-white rounded-xl bg-blue-400">
+                                <LinkIcon className="mr-2 h-8 w-8"/>
+                                <div className="">수상작 링크</div>
+                            </Link>
+                            : 
+                            <div className="flex justify-center ml-2 mt-2 p-2 items-center
+                             font-bold text-white
+                                rounded-xl bg-slate-400">
+                                <LinkIcon className="mr-2 h-8 w-8"/>
+                                <div className="">링크 없음</div>
+                            </div>
+                            }
+                        </div>
+                        ))
+                    }
                 </div>
-                {link && link.length > 0 ?
-                <Link href={link}
-                    className="flex justify-center mt-6 font-bold p-2 text-white
-                    rounded-xl bg-blue-400">
-                    <LinkIcon className="h-8 w-8"/>
-                    <div className="ml-2">수상작 링크</div>
-                </Link>
-                : 
-                <div className="flex justify-center mt-6 font-bold p-2 text-white
-                    rounded-xl bg-slate-400">
-                    <LinkIcon className="h-8 w-8"/>
-                    <div className="ml-2">링크 없음</div>
-                </div>
-                }
             </div>
         </div>
     )
@@ -101,8 +112,8 @@ export default function Index(){
                                 sDate: "2023.9.5",
                                 eDate: "2023.9.12",
                                 topic: "자기소개 웹 사이트 만들기",
-                                winner: "OOO(10기)",
-                                link: ""
+                                winner: ["OOO(10기)", "OOO(10기)", "OOO(10기)"],
+                                link: ["", "", ""]
                             }
                         ]
                     }/>
