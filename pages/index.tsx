@@ -157,7 +157,7 @@ export default function Club() {
       
 
       <div className='py-10 bg-black text-lg text-slate-400 text-center'>
-          사이트 제작: 8기 전현우, 김연준
+          사이트 제작: 8기 전현우 (연세대 컴퓨터과학과), 8기 김연준 (서울대 컴퓨터공학과)
       </div>
     </div>
   )
