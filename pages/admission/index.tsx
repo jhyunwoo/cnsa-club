@@ -1,9 +1,13 @@
 import { LinkIcon } from '@heroicons/react/24/outline'
 import Link from "next/link";
+import {ChevronDoubleLeftIcon} from "@heroicons/react/24/outline";
 
 export default function Index(){
     return (
     <div className={'w-full bg-black text-white min-h-screen p-8 flex items-center justify-center'}>
+        <Link href={'/'} className={'fixed top-4 left-4 flex space-x-2 items-center justify-center'}>
+            <ChevronDoubleLeftIcon className={'size-6'}/><div className={'hover:underline'}>Beatus 홈</div>
+        </Link>
         <div className={'w-full max-w-2xl flex flex-col'}>
             <div className={'text-2xl font-bold mx-auto p-8'}>
                 2024 Beatus 신입부원 모집
