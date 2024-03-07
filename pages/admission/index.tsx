@@ -1,15 +1,40 @@
 import { LinkIcon } from '@heroicons/react/24/outline'
+import Link from "next/link";
 
 export default function Index(){
     return (
-    <div className="w-full min-h-screen text-white bg-black">
-        <div className="p-2 w-full md:w-5/6 lg:w-2/3 xl:w-1/2 mx-auto flex flex-col justify-center text-center">
-            <div className="font-bold text-3xl my-10">
-                신입 부원 모집
+    <div className={'w-full bg-black text-white min-h-screen p-8 flex items-center justify-center'}>
+        <div className={'w-full max-w-2xl flex flex-col'}>
+            <div className={'text-2xl font-bold mx-auto p-8'}>
+                2024 Beatus 신입부원 모집
             </div>
-            <div className=''>
-                신입 부원은 연초에 모집하며, 현재는 모집 기간이 아닙니다.
+            <div className={'p-2'}>
+                <div className={'text-lg font-semibold'}>모집기간</div>
+                <div>~2024년 3월 12일</div>
             </div>
+            <div className={'p-2'}>
+                <div className={'text-lg font-semibold'}>모집인원</div>
+                <div>11기: 15~20명</div>
+                <div>10기: 15~20명</div>
+            </div>
+            <div className={'p-2'}>
+                <div className={'text-lg font-semibold'}>모집절차</div>
+                <div>1. 서류 제출</div>
+                <div>2. 면접</div>
+            </div>
+            <div className={'p-2'}>
+                <div className={'text-lg font-semibold'}>문의</div>
+                <div className={'flex space-x-2 items-center'}>
+                    <div>Beatus 공식 인스트그램</div>
+                    <Link
+                        className={'p-1 rounded-full px-3 bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500'}
+                        href={'https://www.instagram.com/cnsa_beatus/'}>Instagram</Link>
+
+                </div>
+            </div>
+            <Link
+                className={'text-center text-xl mt-8 font-bold w-full bg-gradient-to-r from-green-500 via-orange-500 to-red-500 p-2 rounded-full'}
+                href={'https://forms.gle/xDAa8RNHqz5EY9MBA'}>지원하러가기</Link>
         </div>
     </div>
     )

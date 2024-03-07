@@ -14,9 +14,6 @@ dependencies:
   '@next-auth/prisma-adapter':
     specifier: ^1.0.5
     version: 1.0.5(@prisma/client@4.10.1)(next-auth@4.19.2)
-  '@next/font':
-    specifier: 13.2.0
-    version: 13.2.0
   '@types/node':
     specifier: 18.11.19
     version: 18.11.19
@@ -1413,6 +1410,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -1566,10 +1564,6 @@ packages:
     resolution: {integrity: sha512-o7cauUYsXjzSJkay8wKjpKJf2uLzlggCsGUkPu3lP09Pv97jYlekTC20KJrjQKmSv5DXV0R/uks2ZXhqjNkqAw==}
     dependencies:
       glob: 7.1.7
-    dev: false
-
-  /@next/font@13.2.0:
-    resolution: {integrity: sha512-pWoegIxqegV+9+gFmRCZao6xhA2m3kKS34lMXqShJ5ibRuyHkP/tfDE82LzYZmVQ3p51ZrkwTugNwy/ohiE2cA==}
     dev: false
 
   /@next/swc-darwin-arm64@13.4.9:

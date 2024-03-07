@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Noto_Sans_KR } from '@next/font/google'
+import { Noto_Sans_KR } from "next/font/google"
 import { useRouter } from 'next/router'
 import * as gtag from 'lib/gtag'
 import Script from 'next/script'
