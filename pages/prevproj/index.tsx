@@ -41,7 +41,7 @@ export default function Index(){
                 Beatus의 과거 프로젝트
             </div>
             <HistoryCard name='드려유' year={2023} members='8기' 
-                link='/prevproj/project-dearyou' github=''
+                link='/prevproj/project-dearyou' github='https://github.com/jhyunwoo/dearyou-web'
                 desc='온라인 교내 중고 거래 플랫폼'/>
         </div>
     </div>

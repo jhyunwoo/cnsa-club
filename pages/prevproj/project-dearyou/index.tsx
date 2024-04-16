@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import {
-  ArrowRightIcon,
   ChevronRightIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
@@ -83,7 +82,7 @@ export default function Dearyou() {
           </div>
 
           <div className="flex">
-            {currentDate > openDate ? (
+            {currentDate < openDate ? (
               <Link
                 className="mx-auto rounded-lg border-2 p-4 font-bold
               border-amber-400 bg-amber-400 hover:bg-amber-500 transition duration-200 text-white "
